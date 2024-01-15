@@ -1,0 +1,3 @@
+SELECT SUM(Population) AS total,AVG(Population) AS average, MIN(Population) AS minimum, MAX(Population) AS maximum
+FROM City
+WHERE Elevation < 0

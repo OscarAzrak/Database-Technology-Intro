@@ -1,0 +1,5 @@
+let $d := doc("mondial.xml")/mondial 
+let $dap := $d/airport
+let $dc := $d/country
+for $country in $dc, $ap in $dap where $country/@car_code = $ap/@country
+return <airport name = "{($ap/name)}" code = "{($ap/@iatacode)}" country = "{($country/name)}"/>

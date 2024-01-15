@@ -1,0 +1,3 @@
+SELECT Name
+FROM City
+WHERE Name LIKE "Los%" AND Name NOT LIKE "%is" OR Name LIKE "%holm" 

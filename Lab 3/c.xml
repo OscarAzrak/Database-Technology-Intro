@@ -1,0 +1,8 @@
+let $d := doc("mondial.xml")/mondial 
+let $me := max($d/mountain/elevation) 
+let $dv := doc("mondial.xml")/mondial/mountain[@type = "volcano"]
+let $ve := max($dv/elevation)
+for $mn in $d/mountain, $vn in $dv where $mn/elevation = $me and $vn/elevation = $ve
+
+return (<highestmountain name = "{$mn/name}"><elevation>{$me}</elevation></highestmountain>,
+ <highestvolcano name = "{$vn/name}"><elevation>{$ve}</elevation></highestvolcano>)

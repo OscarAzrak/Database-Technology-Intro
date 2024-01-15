@@ -1,0 +1,4 @@
+SELECT Name, Population
+FROM Country
+ORDER BY Population DESC
+LIMIT 5 

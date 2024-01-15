@@ -1,0 +1,6 @@
+let $d:=doc("mondial.xml")
+for $x in $d//country
+    where $x/population<200000000 and $x/population>300000000
+        return <country> {$x/@car_code}</country>
+
+(:Orlimligt att population ska vara både mindre och större 200000000 respektive 300000000, vi såg även att fram till 1970 hade USA en population på mindre än 200000000 fram till 2010 då USA fick en population som översteg 300000000 vilket kan vara en anledning till att programmet returnerar USA)

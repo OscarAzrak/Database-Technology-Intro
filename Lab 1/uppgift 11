@@ -1,0 +1,10 @@
+SELECT Name
+FROM City
+WHERE Name LIKE "Y%" OR Name LIKE "%x"
+
+UNION ALL
+
+SELECT CountryName as Name
+FROM Country
+WHERE Name LIKE "Y%" OR Name LIKE "%x"
+LIMIT 5;

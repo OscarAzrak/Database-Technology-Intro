@@ -1,0 +1,12 @@
+let $d := doc("mondial.xml")/mondial 
+let $dap := $d/airport
+let $s :=
+	for $dc in $d/country
+	let $count := count($dap/@country[. = string($dc/@car_code)])
+	where $count > 25
+	return  <country name = "{data($dc/name)}" count = "{$count}"/>
+return (
+  <manyairports>
+  	{$s}
+  </manyairports>
+)

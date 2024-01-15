@@ -1,0 +1,5 @@
+let $d:=doc("mondial.xml")
+for $m in $d/mondial/country
+where $m/inflation > 10
+order by $m/inflation
+return <country name = '{$m/name}' inflation = '{$m/inflation}'/>
